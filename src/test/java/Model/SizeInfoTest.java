@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
-public class ClassInfoTest {
+public class SizeInfoTest {
     
-    public ClassInfoTest() {
+    public SizeInfoTest() {
     }
     
     @BeforeClass

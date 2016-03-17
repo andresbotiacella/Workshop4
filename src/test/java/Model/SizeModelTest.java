@@ -16,11 +16,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
-public class LoadDataTest {
+public class SizeModelTest {
     
-    public LoadDataTest() {
+    public SizeModelTest() {
     }
     
     @BeforeClass

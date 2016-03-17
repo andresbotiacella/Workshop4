@@ -7,7 +7,7 @@ package workshop4.Model;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
 public class SizeInfo {
     

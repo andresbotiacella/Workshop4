@@ -19,15 +19,15 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
 public class SizeModel {
     
     /**
-     *Load data from .txt file into a List of SizeInfo objects
+     *Load data from .txt file into a List of objects
      * 
-     * @param filename File to read the data
-     * @return classInfo list with the information read from the file
+     * @param fileName File to read the data
+     * @return List with the information read from the file
      */
     public static List<SizeInfo> loadDataFromFile(String fileName) {
         List<SizeInfo> dataList = new ArrayList<>();
@@ -39,7 +39,7 @@ public class SizeModel {
                 StringTokenizer stringTokenized = new StringTokenizer(line, "\n");
                 if(stringTokenized.hasMoreTokens()) {
                     SizeInfo classInfo = new SizeInfo();
-                    String[] stringsInLine = stringTokenized.nextToken().split(",");
+                    String[] stringsInLine = stringTokenized.nextToken().split("-");
                     classInfo.setClassName(stringsInLine[0]);
                     classInfo.setLoc(Double.parseDouble(stringsInLine[1]));
                     classInfo.setNumberOfMethods(Double.parseDouble(stringsInLine[2]));

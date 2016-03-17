@@ -1,24 +1,17 @@
-import workshop4.Controller.SizeController;
-import workshop4.Model.SizeInfo;
-import workshop4.Model.SizeRange;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
-
-import java.net.URI;
-import java.net.URISyntaxException;
-
 import static spark.Spark.*;
+import static spark.Spark.get;
 import spark.template.freemarker.FreeMarkerEngine;
 import spark.ModelAndView;
-import static spark.Spark.get;
-
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import java.util.List;
-import static spark.Spark.get;
-import static spark.Spark.get;
-import static spark.Spark.get;
+
+import workshop4.Controller.SizeController;
+import workshop4.Model.SizeInfo;
+import workshop4.Model.SizeRange;
 
 public class Main {
 
@@ -31,8 +24,8 @@ public class Main {
     
     get("/calculateValues", (req, res) -> {
         
-        final String FILE_NAME_1 = "dataset1.txt";
-        final String FILE_NAME_2 = "dataset2.txt";
+        final String FILE_NAME_1 = "List1.txt";
+        final String FILE_NAME_2 = "List2.txt";
         final String[] FILE_NAMES = {FILE_NAME_1, FILE_NAME_2};
         List<SizeInfo> data;
         SizeController controller = new SizeController();

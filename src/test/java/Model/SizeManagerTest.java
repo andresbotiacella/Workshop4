@@ -15,11 +15,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
-public class CalculationManagerTest {
+public class SizeManagerTest {
     
-    public CalculationManagerTest() {
+    public SizeManagerTest() {
     }
     
     @BeforeClass

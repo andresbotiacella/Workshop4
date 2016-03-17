@@ -14,10 +14,10 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author SantiagoAvila
+ * @author Andy
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Model.SizeRangeTest.class, Model.ClassInfoTest.class, Model.CalculationManagerTest.class, Model.LoadDataTest.class})
+@Suite.SuiteClasses({Model.SizeRangeTest.class, Model.SizeInfoTest.class, Model.SizeManagerTest.class, Model.SizeModelTest.class})
 public class ModelSuite {
 
     @BeforeClass
