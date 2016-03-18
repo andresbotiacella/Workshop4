@@ -52,7 +52,7 @@ public class Main {
         data2 = controller.loadClassInfo("List2.txt");
         htmlData += "Test Case # 2<br><br>"; //Title
         htmlData += "<div style=\"display: inline-flex\">";
-        htmlData += "<table style=\"borderborder-collapse: collapse; text-align: center\">"; //Open Table
+        htmlData += "<table style=\"border: 1px solid; border-collapse: collapse; text-align: center\">"; //Open Table
         htmlData += "<tr><th style=\"border: 1px solid; width: 120px;\">Chapter</th><th style=\"border: 1px solid; width: 60px;\">Pages</th><th style=\"border: 1px solid; width: 60px;\">Items</th></tr>"; //Header
         for(SizeInfo chapterData : data2) 
         {
