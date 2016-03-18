@@ -23,26 +23,11 @@ import workshop4.Model.*;
  */
 public class SizeControllerTest {
     
+    /**
+     *Empty Constructor
+     */
     public SizeControllerTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-    
-    
 
     /**
      * Test for loadSizeInfo method, from class SizeController.

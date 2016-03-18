@@ -68,6 +68,9 @@ public class Main {
         return htmlData;
     });
     
+    /**
+     *Display Index
+     */
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");

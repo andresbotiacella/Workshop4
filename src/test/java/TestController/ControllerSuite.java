@@ -20,18 +20,30 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({TestController.SizeControllerTest.class})
 public class ControllerSuite {
 
+    /**
+     *Set Up Class Method
+     */
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
+    /**
+     *Tear Down Class Method
+     */
     @AfterClass
     public static void tearDownClass() throws Exception {
     }
 
+    /**
+     *Set Up Method
+     */
     @Before
     public void setUp() throws Exception {
     }
 
+    /**
+     *Tear Down Method
+     */
     @After
     public void tearDown() throws Exception {
     }

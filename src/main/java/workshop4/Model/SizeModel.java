@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 public class SizeModel {
     
     /**
-     *Load data from .txt file into a List of objects
+     *Load data from file into a List of objects
      * 
      * @param fileName File to read the data
      * @return List with the information read from the file

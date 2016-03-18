@@ -17,10 +17,16 @@ import java.util.List;
  */
 public class SizeController {
     
+    /**
+     *Loads Data from File
+     */
     public List<SizeInfo> loadSizeInfo(String fileName) {
         return SizeModel.loadDataFromFile(fileName);
     }
     
+    /**
+     *Calculates Size Range
+     */
     public SizeRange calculateSizeRange(List<SizeInfo> classInfoList) {
         SizeRange sizeRange = new SizeRange();
         sizeRange.setAverage(SizeManager.average(classInfoList));
