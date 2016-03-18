@@ -32,31 +32,34 @@ public class Main {
         List<SizeInfo> data1;
         SizeRange result1 = new SizeRange();
         data1 = controller.loadClassInfo("List1.txt");
-        String htmlData = "Test Case # 1<br>"; //Header
-        htmlData += "<table>"; //Open Table
+        String htmlData = "Test Case # 1<br>"; //Title
+        htmlData += "<div>";
+        htmlData += "<table style=\"float: left; border-collapse: collapse; text-align: center\">"; //Open Table
+        htmlData += "<tr><th style=\"border: 1px solid; width: 150px;\">Class Name</th><th style=\"border: 1px solid; width: 60px;\">LOC</th><th style=\"border: 1px solid; width: 60px;\">Items</th></tr>"; //Header
         for(SizeInfo classData : data1) 
         {
-            htmlData += String.format("<tr><td style=\"border: 1px solid black\">%s</td><td>%s</td><td>%s</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
+            htmlData += String.format("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
         }
         htmlData += "</table><br>"; //Close Table
         result1 = controller.calculateSizeRange(data1);
-        htmlData += String.format("<p>VS = %.5g%n LOC/Method<br>S =  %.5g%n LOC/Method<br>M = %.4g%n LOC/Method<br>L = %.4g%n LOC/Method<br>VL = %.4g%n LOC/Method<br></p>", result1.getVerySmall(), result1.getSmall(), result1.getMedium(), result1.getLarge(), result1.getVeryLarge());
-
+        htmlData += String.format("<p style=\"float:left; margin-left: 20px\">VS = %.5g%n LOC/Method<br>S =  %.5g%n LOC/Method<br>M = %.4g%n LOC/Method<br>L = %.4g%n LOC/Method<br>VL = %.4g%n LOC/Method<br></p>", result1.getVerySmall(), result1.getSmall(), result1.getMedium(), result1.getLarge(), result1.getVeryLarge());
+        htmlData += "</div>";
         
         
         //Test Case 2
         List<SizeInfo> data2;
         SizeRange result2 = new SizeRange();
         data2 = controller.loadClassInfo("List2.txt");
-        htmlData += "Test Case # 2<br>"; //Header
-        htmlData += "<table border=\"1px solid\">"; //Open Table
+        htmlData += "Test Case # 2<br>"; //Title
+        htmlData += "<table style=\"border-collapse: collapse; text-align: center\">"; //Open Table
+        htmlData += "<tr><th style=\"border: 1px solid; width: 120px;\">Chapter</th><th style=\"border: 1px solid; width: 60px;\">Pages</th><th style=\"border: 1px solid; width: 60px;\">Items</th></tr>"; //Header
         for(SizeInfo chapterData : data2) 
         {
-            htmlData += String.format("<tr><td>%s</td><td>%f</td><td>%f</td></tr>", chapterData.getClassName(), chapterData.getLoc(), chapterData.getNumberOfMethods());
+            htmlData += String.format("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", chapterData.getClassName(), chapterData.getLoc(), chapterData.getNumberOfMethods());
         }
         htmlData += "</table><br>"; //Close Table
         result2 = controller.calculateSizeRange(data2);
-        htmlData += String.format("<p>VS = %.5g%n pages/Chapter<br>S =  %.5g%n pages/Chapter<br>M = %.4g%n pages/Chapter<br>L = %.4g%n pages/Chapter<br>VL = %.4g%n pages/Chapter<br></p>", result2.getVerySmall(), result2.getSmall(), result2.getMedium(), result2.getLarge(), result2.getVeryLarge());
+        htmlData += String.format("<p>Very Small = %.5g%n Pages/Chapter<br>Small =  %.5g%n Pages/Chapter<br>Medium = %.4g%n Pages/Chapter<br>Large = %.4g%n Pages/Chapter<br>Very Large = %.4g%n Pages/Chapter<br></p>", result2.getVerySmall(), result2.getSmall(), result2.getMedium(), result2.getLarge(), result2.getVeryLarge());
 
  
         return htmlData;
