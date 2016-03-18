@@ -12,6 +12,7 @@ import java.util.List;
 import workshop4.Controller.SizeController;
 import workshop4.Model.SizeInfo;
 import workshop4.Model.SizeRange;
+import static spark.Spark.get;
 
 public class Main {
 
@@ -20,41 +21,53 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
     
+    /**
+     *Calculates and Displays Size
+     */
+    get("/calculateSize", (req, res) -> {
+        
+        SizeController controller = new SizeController();
+        
+        //Test Case 1
+        List<SizeInfo> data1;
+        SizeRange result1 = new SizeRange();
+        data1 = controller.loadClassInfo("List1.txt");
+        String htmlData = "Test Case # 1<br>"; //Header
+        htmlData += "<table border=\"1px solid\">"; //Open Table
+        for(SizeInfo classData : data1) 
+        {
+            htmlData += String.format("<tr><td>%s</td><td>%f</td><td>%f</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
+        }
+        htmlData += "</table><br>"; //Close Table
+        result1 = controller.calculateSizeRange(data1);
+        htmlData += String.format("<p>VS = %.5g%n LOC/Method<br>S =  %.5g%n LOC/Method<br>M = %.4g%n LOC/Method<br>L = %.4g%n LOC/Method<br>VL = %.4g%n LOC/Method<br></p>", result1.getVerySmall(), result1.getSmall(), result1.getMedium(), result1.getLarge(), result1.getVeryLarge());
+
+        
+        
+        //Test Case 2
+        List<SizeInfo> data2;
+        SizeRange result2 = new SizeRange();
+        data2 = controller.loadClassInfo("List2.txt");
+        htmlData += "Test Case # 2<br>"; //Header
+        htmlData += "<table border=\"1px solid\">"; //Open Table
+        for(SizeInfo chapterData : data2) 
+        {
+            htmlData += String.format("<tr><td>%s</td><td>%f</td><td>%f</td></tr>", chapterData.getClassName(), chapterData.getLoc(), chapterData.getNumberOfMethods());
+        }
+        htmlData += "</table><br>"; //Close Table
+        result2 = controller.calculateSizeRange(data2);
+        htmlData += String.format("<p>VS = %.5g%n pages/Chapter<br>S =  %.5g%n pages/Chapter<br>M = %.4g%n pages/Chapter<br>L = %.4g%n pages/Chapter<br>VL = %.4g%n pages/Chapter<br></p>", result2.getVerySmall(), result2.getSmall(), result2.getMedium(), result2.getLarge(), result2.getVeryLarge());
+
+ 
+        return htmlData;
+    });
+    
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");
 
             return new ModelAndView(attributes, "index.ftl");
         }, new FreeMarkerEngine());
-    
-    
-    get("/calculateSize", (req, res) -> {
-        
-        String[] FILE_NAMES = {"List1.txt", "List2.txt"};
-        List<SizeInfo> data;
-        SizeController controller = new SizeController();
-        SizeRange result = new SizeRange();
-        String dataString = "<p><br>";
-        int count = 1;
-        for(String fileName : FILE_NAMES) {
-            data = controller.loadClassInfo(fileName);
-            dataString += String.format("Caso de prueba %d<br><table border=\"1\">", count);
-            for(SizeInfo classInfo : data) {
-                dataString += String.format("<tr><td>%s</td><td>%f</td><td>%f</td></tr>", classInfo.getClassName(), classInfo.getLoc(), classInfo.getNumberOfMethods());
-            }
-            dataString += "</table><br>";
-            result = controller.calculateSizeRange(data);
-            if(count == 1) {
-                dataString += String.format("<p>VS = %.5g%n LOC/Method<br>S =  %.5g%n LOC/Method<br>M = %.4g%n LOC/Method<br>L = %.4g%n LOC/Method<br>VL = %.4g%n LOC/Method<br></p>", result.getVerySmall(), result.getSmall(), result.getMedium(), result.getLarge(), result.getVeryLarge());
-
-            }else {
-                dataString += String.format("<p>VS = %.5g%n pages/Chapter<br>S =  %.5g%n pages/Chapter<br>M = %.4g%n pages/Chapter<br>L = %.4g%n pages/Chapter<br>VL = %.4g%n pages/Chapter<br></p>", result.getVerySmall(), result.getSmall(), result.getMedium(), result.getLarge(), result.getVeryLarge());
- 
-            }
-            count++;
-        }
-        return dataString;
-    });
 
   }
 
