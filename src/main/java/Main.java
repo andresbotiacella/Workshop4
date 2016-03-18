@@ -33,10 +33,10 @@ public class Main {
         SizeRange result1 = new SizeRange();
         data1 = controller.loadClassInfo("List1.txt");
         String htmlData = "Test Case # 1<br>"; //Header
-        htmlData += "<table border=\"1px solid\">"; //Open Table
+        htmlData += "<table>"; //Open Table
         for(SizeInfo classData : data1) 
         {
-            htmlData += String.format("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
+            htmlData += String.format("<tr><td style=\"border: 1px solid black\">%s</td><td>%d</td><td>%d</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
         }
         htmlData += "</table><br>"; //Close Table
         result1 = controller.calculateSizeRange(data1);
