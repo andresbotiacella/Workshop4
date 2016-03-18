@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package workshop4.Controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author Andy
  */
-public class SizeModelTest {
+public class SizeControllerJUnit {
     
-    public SizeModelTest() {
+    public SizeControllerJUnit() {
     }
     
     @BeforeClass
@@ -39,10 +37,13 @@ public class SizeModelTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of loadDataFromFile method, of class LoadData.
-     */
-//    @Test
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
+    
+    //    @Test
 //    public void testLoadDataFromFile() {
 //        System.out.println("loadDataFromFile");
 //        String fileName = "dataset2.txt";
@@ -72,5 +73,4 @@ public class SizeModelTest {
 //        assertEquals(expResult, result);
 //        // TODO review the generated test code and remove the default call to fail.
 //    }
-    
 }
