@@ -13,6 +13,8 @@ import workshop4.Controller.SizeController;
 import workshop4.Model.SizeInfo;
 import workshop4.Model.SizeRange;
 import static spark.Spark.get;
+import static spark.Spark.get;
+import static spark.Spark.get;
 
 public class Main {
 
@@ -31,7 +33,7 @@ public class Main {
         //Test Case 1
         List<SizeInfo> data1;
         SizeRange result1 = new SizeRange();
-        data1 = controller.loadClassInfo("List1.txt");
+        data1 = controller.loadSizeInfo("List1.txt");
         String htmlData = "Test Case # 1<br><br>"; //Title
         htmlData += "<div style=\"display: inline-flex\">";
         htmlData += "<table style=\"border: 1px solid; border-collapse: collapse; text-align: center\">"; //Open Table
@@ -49,7 +51,7 @@ public class Main {
         //Test Case 2
         List<SizeInfo> data2;
         SizeRange result2 = new SizeRange();
-        data2 = controller.loadClassInfo("List2.txt");
+        data2 = controller.loadSizeInfo("List2.txt");
         htmlData += "Test Case # 2<br><br>"; //Title
         htmlData += "<div style=\"display: inline-flex\">";
         htmlData += "<table style=\"border: 1px solid; border-collapse: collapse; text-align: center\">"; //Open Table

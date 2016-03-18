@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class SizeController {
     
-    public List<SizeInfo> loadClassInfo(String fileName) {
+    public List<SizeInfo> loadSizeInfo(String fileName) {
         return SizeModel.loadDataFromFile(fileName);
     }
     
