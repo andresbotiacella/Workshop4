@@ -36,7 +36,7 @@ public class Main {
         htmlData += "<table>"; //Open Table
         for(SizeInfo classData : data1) 
         {
-            htmlData += String.format("<tr><td style=\"border: 1px solid black\">%s</td><td>%d</td><td>%d</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
+            htmlData += String.format("<tr><td style=\"border: 1px solid black\">%s</td><td>%s</td><td>%s</td></tr>", classData.getClassName(), classData.getLoc(), classData.getNumberOfMethods());
         }
         htmlData += "</table><br>"; //Close Table
         result1 = controller.calculateSizeRange(data1);
